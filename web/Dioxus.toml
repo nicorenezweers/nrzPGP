@@ -1,0 +1,8 @@
+[application]
+name = "nrzpgp_web"
+
+[web.app]
+title = "nrzPGP"
+
+[serve]
+port = 8080

@@ -1,0 +1,49 @@
+[workspace]
+members = [".", "crates/icons", "crates/tw_merge/tw_merge", "crates/tw_merge/tw_merge_variants"]
+resolver = "2"
+
+[package]
+name = "nrzpgp_web"
+version = "1.0.0"
+edition = "2024"
+publish = false
+license = "AGPL-3.0-or-later"
+description = "nrzPGP – Weboberflaeche (Dioxus, nrzUI)"
+
+[dependencies]
+dioxus = { version = "0.7.10", features = ["router", "web"] }
+nrzpgp_shared = { path = "../shared" }
+icons = { path = "crates/icons", features = ["dioxus"] }
+tw_merge = { path = "crates/tw_merge/tw_merge", features = ["debug"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+strum = { version = "0.28", features = ["derive"] }
+urlencoding = "2"
+gloo-timers = { version = "0.3", features = ["futures"] }
+js-sys = "0.3"
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+futures = { version = "0.3", default-features = false, features = ["std", "async-await"] }
+web-sys = { version = "0.3", features = [
+  "Window", "Location", "History", "Document", "Element", "HtmlElement", "HtmlInputElement",
+  "HtmlTextAreaElement", "HtmlMetaElement", "HtmlAnchorElement", "Event", "EventTarget", "MouseEvent",
+  "KeyboardEvent", "Request", "RequestInit", "RequestCredentials", "RequestMode", "Response", "Headers",
+  "Storage", "Navigator", "Clipboard", "ScrollToOptions", "ScrollBehavior", "DomTokenList", "Blob",
+  "BlobPropertyBag", "Url",
+] }
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[profile.wasm-dev]
+inherits = "dev"
+opt-level = 1
+
+[profile.server-dev]
+inherits = "dev"
+
+[profile.android-dev]
+inherits = "dev"

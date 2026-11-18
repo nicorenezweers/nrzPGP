@@ -1,0 +1,10 @@
+[package]
+name = "nrzpgp_shared"
+description = "nrzPGP: API-Typen und Regeln, gemeinsam fuer Server und Oberflaeche"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }

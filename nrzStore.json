@@ -1,0 +1,7 @@
+{
+  "store": "nicorenezweers/nrzStore",
+  "app": "nrz-pgp",
+  "tagPrefix": "umbrel-",
+  "package": "umbrel",
+  "releaseNotes": "Erste Version: Profile, Verschluesseln, Entschluesseln, Signieren, PGP-Pruefer, Kontakte, Tresor mit Raetseln und Cap-Captcha, Protokoll."
+}

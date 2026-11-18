@@ -1,0 +1,36 @@
+[package]
+name = "nrzpgp"
+description = "nrzPGP: Server (axum + SQLite), PGP-Werkzeuge, liefert API und Weboberflaeche aus"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+nrzpgp_shared = { path = "../shared" }
+axum = { version = "0.8", features = ["macros"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "signal", "fs", "net", "time"] }
+tower = { version = "0.5", features = ["util"] }
+tower-http = { version = "0.6", features = ["compression-gzip", "compression-br", "limit"] }
+rusqlite = { version = "0.32", features = ["bundled", "functions"] }
+r2d2 = "0.8"
+r2d2_sqlite = "0.25"
+argon2 = { version = "0.5", features = ["std"] }
+rand = "0.8"
+sha2 = "0.10"
+hkdf = "0.12"
+chacha20poly1305 = "0.10"
+zeroize = { version = "1", features = ["derive"] }
+base64 = "0.22"
+hex = "0.4"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+mime_guess = "2"
+pgp = "0.21"
+rsa = "0.9"
+
+[dev-dependencies]
+http-body-util = "0.1"

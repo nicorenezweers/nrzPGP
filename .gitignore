@@ -1,0 +1,14 @@
+/target
+/data
+/web/target
+/web/dist
+/web/assets/tailwind.css
+/web/node_modules
+/e2e/node_modules
+/e2e/shots
+/release
+.env
+*.db
+*.db-shm
+*.db-wal
+.DS_Store

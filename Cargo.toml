@@ -1,0 +1,21 @@
+[workspace]
+resolver = "2"
+members = ["shared", "server"]
+exclude = ["web"]
+
+[workspace.package]
+version = "1.0.0"
+edition = "2024"
+license = "AGPL-3.0-or-later"
+publish = false
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 4
+strip = true
+panic = "abort"
+
+# Krypto und SQLite auch im Debug-Build optimieren (sonst sind Schluesselerzeugung/Tests sehr langsam).
+[profile.dev.package."*"]
+opt-level = 2
