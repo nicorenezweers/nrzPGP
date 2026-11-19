@@ -1,0 +1,16 @@
+# Zeilenenden
+* text=auto eol=lf
+*.wasm binary
+*.png binary
+
+# Fremdcode und Build-Artefakte
+cap/vendor/** linguist-vendored
+web/public/cap/** linguist-vendored
+*.lock linguist-generated
+
+# Hilfsdateien (Dienst-Wrapper, Tests, Skripte, Paketierung, Styles)
+cap/*.mjs linguist-detectable=false
+e2e/** linguist-detectable=false
+scripts/** linguist-detectable=false
+umbrel/** linguist-detectable=false
+web/tailwind.css linguist-detectable=false
